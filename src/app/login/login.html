@@ -1,65 +1,94 @@
-<div class="login-box">
-  <div class="login-logo">
-    <a href="../../index2.html"><b>Admin</b>LTE</a>
-  </div>
-  <!-- /.login-logo -->
-  <div class="card">
-    <div class="card-body login-card-body">
-      <p class="login-box-msg">Novia Eka Safitri 231103883</p>
-      <p class="login-box-msg">Sign in to start your session</p>
 
-      <form action="../../index3.html" method="post">
-        <div class="input-group mb-3">
-          <input type="email" class="form-control" placeholder="Email">
-          <div class="input-group-append">
-            <div class="input-group-text">
-              <span class="fas fa-envelope"></span>
-            </div>
-          </div>
-        </div>
-        <div class="input-group mb-3">
-          <input type="password" class="form-control" placeholder="Password">
-          <div class="input-group-append">
-            <div class="input-group-text">
-              <span class="fas fa-lock"></span>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-8">
-            <div class="icheck-primary">
-              <input type="checkbox" id="remember">
-              <label for="remember">
-                Remember Me
-              </label>
-            </div>
-          </div>
-          <!-- /.col -->
-          <div class="col-4">
-            <button type="submit" class="btn btn-primary btn-block" [routerLink]="['/admin']" routerLinkActive="router-link-activate">Sign In</button>
-          </div>
-          <!-- /.col -->
-        </div>
-      </form>
 
-      <div class="social-auth-links text-center mb-3">
-        <p>- OR -</p>
-        <a href="#" class="btn btn-block btn-primary">
-          <i class="fab fa-facebook mr-2"></i> Sign in using Facebook
-        </a>
-        <a href="#" class="btn btn-block btn-danger">
-          <i class="fab fa-google-plus mr-2"></i> Sign in using Google+
-        </a>
+<!-- Container form login (tetap sama seperti yang Anda punya) -->
+<div class="login-wrapper">
+  <div class="login-box">
+    <div class="card card-body login-card-body">
+      <div class="glass-card">
+        <div class="text-header">
+          <div class="card-body login-card-body"></div>
+          <p class="login-box-msg">Novia Eka Safitri 231103883</p>
+        </div>
+        <div class="card-body">
+          <p class="login-box-msg">Sign in to start your session</p>
+
+          <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="User Id" id="idText">
+            <div class="input-group-append">
+              <div class="input-group-text">
+                <span class="fas fa-envelope"></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="input-group mb-3">
+            <input type="password" class="form-control" placeholder="Password" id="passwordText">
+            <div class="input-group-append">
+              <div class="input-group-text">
+                <span class="fas fa-lock"></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-8">
+              <div class="icheck-primary">
+                <input type="checkbox" id="remember">
+                <label for="remember">Remember Me</label>
+              </div>
+            </div>
+            <div class="col-4">
+              <button class="btn btn-glass" (click)="signIn()">Sign In</button>
+            </div>
+          </div>
+
+          <div class="social-auth-links text-center mt-4 mb-3">
+            <a href="#" class="btn btn-block btn-primary">
+              <i class="fab fa-facebook mr-2"></i> Sign in using Facebook
+            </a>
+            <a href="#" class="btn btn-block btn-danger mt-2">
+              <i class="fab fa-google-plus mr-2"></i> Sign in using Google+
+            </a>
+          </div>
+
+          <p class="mb-1">
+            <a href="forgot-password.html">I forgot my password</a>
+          </p>
+          <p class="mb-0">
+            <a href="register.html" class="text-center" [routerLink]="['/register']">Register a new membership</a>
+          </p>
+        </div>
       </div>
-      <!-- /.social-auth-links -->
-
-      <p class="mb-1">
-        <a href="forgot-password.html">I forgot my password</a>
-      </p>
-      <p class="mb-0">
-        <a href="register.html" class="text-center">Register a new membership</a>
-      </p>
     </div>
-    <!-- /.login-card-body -->
+  </div>
+</div>
+
+<!-- Modal Peringatan (tidak diubah) -->
+<div class="modal" id="peringatanModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header bg-warning">
+        <h5 class="modal-title">
+          <i class="fa fa-exclamation-circle"></i>
+          Peringatan
+        </h5>
+        <button class="close" data-dismiss="modal">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-md-12 col-lg-12 col-xs-12">
+            <span id="pm_message"></span>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-warning" data-dismiss="modal">
+          <i class="fa fa-check"></i>
+          Ok
+        </button>
+      </div>
+    </div>
   </div>
 </div>
